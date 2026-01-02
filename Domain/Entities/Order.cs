@@ -8,9 +8,10 @@ namespace EcommerceDatabaseBenchmark.Domain.Entities
         public int CustomerId { get; set; }
         public OrderStatus Status { get; set; }
         public decimal TotalAmount { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public DateTimeOffset CreatedAt { get; set; }
 
         // Navigation properties
-        public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public Customer Customer { get; set; } = null!;
+        public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
     }
 }
