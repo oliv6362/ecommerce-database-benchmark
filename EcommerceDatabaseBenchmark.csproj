@@ -10,4 +10,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\Interfaces\" />
+    <Folder Include="Application\Usecases\" />
+    <Folder Include="Infrastructure\Mongo\" />
+    <Folder Include="Infrastructure\SqlServer\" />
+    <Folder Include="Benchmarks\" />
+  </ItemGroup>
+
 </Project>
