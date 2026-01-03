@@ -14,7 +14,7 @@ public class OrderConfig : IEntityTypeConfiguration<Order>
 
         b.Property(x => x.Status).HasConversion<int>().IsRequired();
         b.Property(x => x.TotalAmount).HasPrecision(18, 2).IsRequired();
-        b.Property(x => x.CreatedAt).HasDefaultValueSql("SYSDATETIMEOFFSET()");
+        b.Property(x => x.CreatedAt).HasDefaultValueSql("SYSDATETIMEOFFSET()").IsRequired(); ;
 
         // Relationships
         b.HasOne(x => x.Customer)
@@ -28,7 +28,7 @@ public class OrderConfig : IEntityTypeConfiguration<Order>
             .OnDelete(DeleteBehavior.Cascade);
 
         // Indexes
-        b.HasIndex(x => new { x.CustomerId, x.CreatedAt });
+        b.HasIndex(x => new { x.CustomerId, x.CreatedAt, x.OrderId });
         b.HasIndex(x => x.CreatedAt); 
 
         // Constraints
