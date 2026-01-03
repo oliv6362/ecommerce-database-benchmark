@@ -1,7 +1,7 @@
 ﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC3;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC3;
 
-namespace EcommerceDatabaseBenchmark.Application.UseCases;
+namespace EcommerceDatabaseBenchmark.Application.Usecases.UC3;
 
 /// <summary>
 /// Use-case that loads paged order history for a customer (latest first).

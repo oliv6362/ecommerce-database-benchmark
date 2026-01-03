@@ -1,4 +1,4 @@
-﻿namespace EcommerceDatabaseBenchmark.Application.Interfaces
+﻿namespace EcommerceDatabaseBenchmark.Application.Interfaces.UC1
 {
     // Port that validates customer existence
     public interface ICustomerRead

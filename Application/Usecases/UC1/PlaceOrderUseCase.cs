@@ -1,9 +1,9 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos;
-using EcommerceDatabaseBenchmark.Application.Interfaces;
+﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC1;
+using EcommerceDatabaseBenchmark.Application.Interfaces.UC1;
 using EcommerceDatabaseBenchmark.Domain.Entities;
 using EcommerceDatabaseBenchmark.Domain.Enums;
 
-namespace EcommerceDatabaseBenchmark.Application.UseCases;
+namespace EcommerceDatabaseBenchmark.Application.Usecases.UC1;
 
 /// <summary>
 /// Use-case that is responsible for placing a new order in the system.

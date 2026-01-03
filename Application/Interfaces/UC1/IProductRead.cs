@@ -1,4 +1,4 @@
-﻿namespace EcommerceDatabaseBenchmark.Application.Interfaces
+﻿namespace EcommerceDatabaseBenchmark.Application.Interfaces.UC1
 {
     public sealed record ProductSnapshot(int ProductId, decimal Price);
 

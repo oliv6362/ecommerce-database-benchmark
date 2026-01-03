@@ -1,7 +1,7 @@
-﻿using EcommerceDatabaseBenchmark.Application.Interfaces;
+﻿using EcommerceDatabaseBenchmark.Application.Interfaces.UC1;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Adapters;
+namespace EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Adapters.UC1;
 
 /// <summary>
 /// SQL Server adapter responsible for retrieving product data (Ids & price) using Entity Framework Core.

@@ -1,7 +1,7 @@
-﻿using EcommerceDatabaseBenchmark.Application.Interfaces;
+﻿using EcommerceDatabaseBenchmark.Application.Interfaces.UC1;
 using EcommerceDatabaseBenchmark.Domain.Entities;
 
-namespace EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Adapters;
+namespace EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Adapters.UC1;
 
 /// <summary>
 /// SQL Server adapter responsible for persisting orders using Entity Framework Core.

@@ -1,7 +1,7 @@
 ﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC4;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC4;
 
-namespace EcommerceDatabaseBenchmark.Application.UseCases;
+namespace EcommerceDatabaseBenchmark.Application.Usecases.UC4;
 
 /// <summary>
 /// Use-case that retrieves top-selling products by quantity sold within a time range. (e.g., last 30 days, top 10 products)

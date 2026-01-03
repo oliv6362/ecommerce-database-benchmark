@@ -1,7 +1,7 @@
 ﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC2;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC2;
 
-namespace EcommerceDatabaseBenchmark.Application.UseCases;
+namespace EcommerceDatabaseBenchmark.Application.Usecases.UC2;
 
 /// <summary>
 /// Use-case that loads all data needed for an "Order details" page.
