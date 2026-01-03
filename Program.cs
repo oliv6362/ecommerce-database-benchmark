@@ -1,7 +1,18 @@
-using Microsoft.EntityFrameworkCore;
+using EcommerceDatabaseBenchmark.Application.Interfaces;
+using EcommerceDatabaseBenchmark.Application.UseCases.PlaceOrder;
 using EcommerceDatabaseBenchmark.Infrastructure.SqlServer;
+using EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Adapters;
+using Microsoft.EntityFrameworkCore;
+using EcommerceDatabaseBenchmark.Infrastructure.SqlServer.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ICustomerRead, SqlCustomerRead>();
+builder.Services.AddScoped<IProductRead, SqlProductRead>();
+builder.Services.AddScoped<IOrderWrite, SqlOrderWrite>();
+
+builder.Services.AddScoped<PlaceOrderUseCase>();
+builder.Services.AddScoped<DatabaseSeeder>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
