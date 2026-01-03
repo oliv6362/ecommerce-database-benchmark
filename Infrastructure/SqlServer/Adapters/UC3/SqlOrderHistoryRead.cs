@@ -21,7 +21,6 @@ public sealed class SqlOrderHistoryRead(SqlDbContext db) : IOrderHistoryRead
         var orders = await db.Orders
             .AsNoTracking()
             .Where(o => o.CustomerId == customerId)
-            // stable ordering for paging
             .OrderByDescending(o => o.CreatedAt)
             .ThenByDescending(o => o.OrderId)
             .Skip(skip)
