@@ -3,7 +3,7 @@ using EcommerceDatabaseBenchmark.Application.Interfaces;
 using EcommerceDatabaseBenchmark.Domain.Entities;
 using EcommerceDatabaseBenchmark.Domain.Enums;
 
-namespace EcommerceDatabaseBenchmark.Application.UseCases.PlaceOrder;
+namespace EcommerceDatabaseBenchmark.Application.UseCases;
 
 /// <summary>
 /// Use-case that is responsible for placing a new order in the system.
@@ -14,6 +14,9 @@ namespace EcommerceDatabaseBenchmark.Application.UseCases.PlaceOrder;
 /// - Creating an order aggregate with order items
 /// - Calculating the total order amount
 /// - Persisting the order via an abstract write port
+/// 
+/// Benchmark focus:
+/// - Measures write performance for placing a new order with N items.
 /// </summary>
 public sealed class PlaceOrderUseCase
 {
