@@ -1,4 +1,4 @@
-﻿namespace EcommerceDatabaseBenchmark.Application.Dtos.UC3
+﻿namespace EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC3
 {
     public sealed record OrderHistoryPage(
         int CustomerId,

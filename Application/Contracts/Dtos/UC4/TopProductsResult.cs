@@ -1,4 +1,4 @@
-﻿namespace EcommerceDatabaseBenchmark.Application.Dtos.UC4
+﻿namespace EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC4
 {
     public sealed record TopProductsResult(
         DateTimeOffset FromUtc,

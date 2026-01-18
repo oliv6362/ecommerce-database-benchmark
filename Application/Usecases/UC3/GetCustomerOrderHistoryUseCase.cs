@@ -1,4 +1,4 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC3;
+﻿using EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC3;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC3;
 
 namespace EcommerceDatabaseBenchmark.Application.Usecases.UC3;

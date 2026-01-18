@@ -1,4 +1,4 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC1;
+﻿using EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC1;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC1;
 using EcommerceDatabaseBenchmark.Domain.Entities;
 using EcommerceDatabaseBenchmark.Domain.Enums;

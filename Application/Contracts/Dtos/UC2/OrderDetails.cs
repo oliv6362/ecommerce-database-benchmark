@@ -1,6 +1,4 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC2;
-
-namespace EcommerceDatabaseBenchmark.Application.Dtos.UC2
+﻿namespace EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC2
 {
     public sealed record OrderDetails(
         int OrderId,

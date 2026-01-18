@@ -1,4 +1,4 @@
-﻿namespace EcommerceDatabaseBenchmark.Application.Dtos.UC1
+﻿namespace EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC1
 {
     public class PlaceOrderRequest
     {

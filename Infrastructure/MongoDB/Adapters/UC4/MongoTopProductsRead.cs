@@ -1,4 +1,4 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos.UC4;
+﻿using EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC4;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC4;
 using EcommerceDatabaseBenchmark.Infrastructure.MongoDB.Documents;
 using MongoDB.Bson;

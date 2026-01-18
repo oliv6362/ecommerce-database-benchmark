@@ -1,5 +1,4 @@
-﻿using EcommerceDatabaseBenchmark.Application.Dtos;
-using EcommerceDatabaseBenchmark.Application.Dtos.UC2;
+﻿using EcommerceDatabaseBenchmark.Application.Contracts.Dtos.UC2;
 using EcommerceDatabaseBenchmark.Application.Interfaces.UC2;
 using Microsoft.EntityFrameworkCore;
 
