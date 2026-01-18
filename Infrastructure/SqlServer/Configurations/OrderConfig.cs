@@ -28,8 +28,8 @@ public class OrderConfig : IEntityTypeConfiguration<Order>
             .OnDelete(DeleteBehavior.Cascade);
 
         // Indexes
-        b.HasIndex(x => new { x.CustomerId, x.CreatedAt, x.OrderId });
-        b.HasIndex(x => x.CreatedAt); 
+        b.HasIndex(x => new { x.CustomerId, x.CreatedAt, x.OrderId }); //UC3
+        b.HasIndex(x => x.CreatedAt);  //UC4
 
         // Constraints
         b.ToTable(t =>

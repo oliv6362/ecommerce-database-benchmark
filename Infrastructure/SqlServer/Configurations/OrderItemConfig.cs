@@ -27,8 +27,8 @@ public class OrderItemConfig : IEntityTypeConfiguration<OrderItem>
             .OnDelete(DeleteBehavior.Restrict);
 
         // Indexes
-        b.HasIndex(x => new { x.OrderId, x.ProductId }).IsUnique();
-        b.HasIndex(x => x.ProductId);
+        b.HasIndex(x => new { x.OrderId, x.ProductId }).IsUnique(); //UC2
+        b.HasIndex(x => x.ProductId); //UC4
 
 
         // Constraints
