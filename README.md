@@ -145,20 +145,62 @@ The repository follows **Clean Architecture** and is structured as a layered .NE
 
 This structure supports separation of concerns and makes it easier to benchmark the same use cases across different database implementations.
 
-## Running the Project
+## Getting Started
 
-The repository includes a `docker-compose.yml` file for starting the database services. In the current setup, Docker Compose defines services for **MongoDB**, **Mongo Express**, and **SQL Server**, and expects environment variables such as `MONGO_ROOT_USERNAME`, `MONGO_ROOT_PASSWORD`, `MONGO_DATABASE`, and `SA_PASSWORD`. :contentReference[oaicite:1]{index=1}
+This project uses:
 
-A typical workflow is:
+- Docker Compose for SQL Server and MongoDB containers
+- .NET user secrets for application credentials
+- Postman to seed data and run benchmarks
 
-1. Clone the repository
-2. Configure the required environment variables
-3. Start the database containers with Docker Compose
-4. Run the .NET application
-5. Execute the benchmark scenarios
+### 1. Configure Docker Compose
+Create a `.env` file in the repository root.
 
 Example:
 
-```bash
-docker compose up -d
-dotnet run
+```env
+# Mongo
+MONGO_ROOT_USERNAME=your-mongo-username
+MONGO_ROOT_PASSWORD=your-chosen-password
+MONGO_DATABASE=EcommerceBenchmark
+
+# SQL Server
+SA_USER=sa
+SA_PASSWORD=your-chosen-password
+```
+
+### 2. Configure application secrets
+Set the secrets used by the .NET application
+
+Example:
+```
+dotnet user-secrets set "SA_PASSWORD" "your-chosen-password"
+dotnet user-secrets set "MONGO_USERNAME" "your-mongo-username"
+dotnet user-secrets set "MONGO_PASSWORD" "your-chosen-password"
+```
+   
+### 3. Start the databases
+`docker compose up -d --build`
+  
+### 4. Run the API
+`dotnet run`
+
+### 5. Apply SQL Server migrations
+`dotnet ef database update`
+   
+### 6. Use Postman
+Use Postman to call the four endpoints:
+
+1. Seed SQL Server
+2. Run SQL Server benchmark
+3. Seed MongoDB
+4. Run MongoDB benchmark
+
+Example:
+
+```
+http://localhost:5178/benchmark/seed?provider=sql&profile=medium&seed=42
+http://localhost:5178/benchmark/run?provider=sql&iterations=30&customerId=195
+http://localhost:5178/benchmark/seed?provider=mongo&profile=medium&seed=42
+http://localhost:5178/benchmark/run?provider=mongo&iterations=30&customerId=195
+```
