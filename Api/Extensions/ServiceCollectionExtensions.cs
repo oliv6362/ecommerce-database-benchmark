@@ -26,7 +26,7 @@ public static class ServiceCollectionExtensions
     /// - Keyed ports & adapters for UC1–UC4 using SQL Server implementations.
     /// - The SQL Server seeder.
     /// - The SqlDbContext configured with a connection string from configuration
-    ///   and a password read from the SA_PASSWORD environment variable.
+    ///   and a password read from the SA_PASSWORD user-secrets.
     /// </summary>
     public static IServiceCollection AddSqlServerInfrastructure(this IServiceCollection services, IConfiguration config)
     {
@@ -45,7 +45,7 @@ public static class ServiceCollectionExtensions
             ?? throw new InvalidOperationException("Missing ConnectionStrings:SqlServer");
 
         var sqlPassword = config["SA_PASSWORD"]
-            ?? throw new InvalidOperationException("Missing environment variable: SA_PASSWORD");
+            ?? throw new InvalidOperationException("Missing user-secrets: SA_PASSWORD");
 
         var csb = new SqlConnectionStringBuilder(sqlBase)
         {
