@@ -8,7 +8,7 @@ This project benchmarks **SQL Server** and **MongoDB** in a simple e-commerce or
 
 ![Benchmark results comparing SQL Server and MongoDB across the four use cases](docs/images/benchmark-results.png)
 
-*Figure 1. Average response time in milliseconds for SQL Server and MongoDB across UC1–UC4.*
+*Figure 1. Average response time in milliseconds for SQL Server and MongoDB across UC1-UC4.*
 
 ## Problem Statement
 
@@ -25,16 +25,16 @@ The project investigates these questions:
 
 The benchmark is based on four realistic use cases:
 
-- **UC1 – Place Order**  
+- **UC1 - Place Order**  
   Measures write performance when creating an order with 1, 3, and 10 order items.
 
-- **UC2 – Get Order Details**  
+- **UC2 - Get Order Details**  
   Measures read performance when retrieving a single order together with customer data, order items, and product information.
 
-- **UC3 – Customer Order History**  
+- **UC3 - Customer Order History**  
   Measures paged reads for a customer’s order history, including the effect of paging depth and indexing.
 
-- **UC4 – Top-selling Products**  
+- **UC4 - Top-selling Products**  
   Measures aggregating queries used for analytical reporting.
 
 The project uses a shared application layer and a **ports-and-adapters architecture**, so the same business logic is used for both databases. This makes the comparison more fair, since differences in results are mainly related to the database choice, data model, and query patterns.
@@ -70,7 +70,7 @@ Both **SQL Server** and **MongoDB** were run locally in **Docker** to ensure iso
 
 ## Key Findings
 
-### UC1 – Place Order
+### UC1 - Place Order
 MongoDB performed better than SQL Server when creating orders with multiple order items.
 
 This is mainly explained by the difference in data modeling:
@@ -80,7 +80,7 @@ This is mainly explained by the difference in data modeling:
 
 As the number of order items increased, SQL Server showed higher write overhead, while MongoDB remained more efficient and generally more stable.
 
-### UC2 – Get Order Details
+### UC2 - Get Order Details
 SQL Server performed better than MongoDB when retrieving an order with related data.
 
 This use case benefits from SQL Server’s relational model:
@@ -90,7 +90,7 @@ This use case benefits from SQL Server’s relational model:
 
 This made SQL Server faster in a read-heavy scenario with more complex relationships.
 
-### UC3 – Customer Order History
+### UC3 - Customer Order History
 Both databases performed well for shallow paging, but SQL Server showed a tendency toward higher response times at deeper paging levels.
 
 This is likely related to paging strategy:
@@ -100,7 +100,7 @@ This is likely related to paging strategy:
 
 At higher paging depth, SQL Server appeared more affected, while MongoDB maintained a more stable profile in this setup.
 
-### UC4 – Top-selling Products
+### UC4 - Top-selling Products
 Both databases handled the analytical query effectively, but MongoDB achieved lower average response times.
 
 This can be explained by MongoDB’s aggregation pipeline working directly on embedded order items, while SQL Server had to aggregate across normalized tables and joins.
